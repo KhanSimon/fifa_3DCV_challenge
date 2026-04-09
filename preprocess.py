@@ -1,6 +1,7 @@
 """
-This script extracts 2D and 3D keypoints from 2D detections using the 4DHuman model.
+This script extracts 2D and 3D keypoints from 2D detections using the 4DHuman model. 
 Please refer to the https://github.com/shubham-goel/4D-Humans/tree/main for installation instructions.
+Plus à jour. Utilise SAM 3D body à la place. 
 
 Author: Tianjian Jiang
 Date: March 16, 2025
@@ -99,7 +100,7 @@ class SAM3D:
         return kpt_2d, kpt_3d
 
 def main(root):
-    model = SAM3D("cuda")
+    model = SAM3D("cuda") #remplacer par mps sur mac 
     sequences = load_sequences(root)
     for seq in sequences:
         camera = np.load(root / "cameras" / f"{seq}.npz")

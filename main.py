@@ -15,7 +15,7 @@ from lib.camera_tracker import CameraTracker, CameraTrackerOptions
 from lib.postprocess import smoothen
 
 
-OPENPOSE_TO_OURS = [0, 2, 5, 3, 6, 4, 7, 9, 12, 10, 13, 11, 14, 22, 19]
+OPENPOSE_TO_OURS = [0, 2, 5, 3, 6, 4, 7, 9, 12, 10, 13, 11, 14, 22, 19] #15 keypoints
 
 
 def intersection_over_plane(o, d):
@@ -239,11 +239,11 @@ def process_sequence(
             skel_2d = skels_2d[frame_idx, person]
 
             IDX = np.argmax(skel_2d[:, 1])
-            x, y = skel_2d[IDX]
+            x, y = skel_2d[IDX] #récupère le keypoint le plus bas (le plus proche du sol) pour la personne actuelle au frame actuel
             K = cameras["K"][frame_idx]
             k = cameras["k"][frame_idx]
             R, t = Rt[-1]
-            o, d = ray_from_xy((x, y), K, R, t, k[0], k[1])
+            o, d = ray_from_xy((x, y), K, R, t, k[0], k[1]) #calcule le rayon partant de la caméra passant par le point (x, y) dans l'image, en tenant compte de la distorsion radiale (k1 et k2)
             intersection = intersection_over_plane(o, d)
 
             # convert from camera space to world space
