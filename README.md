@@ -1,3 +1,5 @@
+conda activate /home/BeeGFS/Laboratories/IBHGC/skhan/Documents/fifa_3DCV_challenge/.venv
+
 # FIFA Skeletal Tracking Starter Kit (2026)
 [🏠Homepage](https://inside.fifa.com/innovation/innovation-programme/skeletal-tracking) |
 [💻Data](https://huggingface.co/datasets/tijiang13/FIFA-Skeletal-Tracking-Light-2026/tree/main) |

@@ -1,7 +1,7 @@
 .venv
 data
 __pycache__
-sam3
-
+.venv_metrabs
+.vscode
 
 
