@@ -104,8 +104,8 @@ def main(root):
     sequences = load_sequences(root)
     for seq in sequences:
         camera = np.load(root / "cameras" / f"{seq}.npz")
-        skel_2d_path = root / "skel_2d" / f"{seq}.npy"
-        skel_3d_path = root / "skel_3d" / f"{seq}.npy"
+        skel_2d_path = root / "skel_2d_new" / f"{seq}.npy"
+        skel_3d_path = root / "skel_3d_new" / f"{seq}.npy"
         if skel_2d_path.exists() and skel_3d_path.exists():
             continue
 

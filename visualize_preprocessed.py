@@ -329,5 +329,9 @@ def visualize_3D_npy(npy_path: Union[str, Path], index_player: int):
     plt.show()
     return anim
 
-#anim = visualize_2D_npy("data/skel_2d/ARG_CRO_000737.npy", index_player=1)
-anim = visualize_3D_npy("data/skel_3d/ARG_CRO_000737.npy", index_player=0)
+#anim = visualize_2D_npy("data/skel_2d/ARG_CRO_225412.npy", index_player=20)
+#anim = visualize_3D_npy("data/skel_3d/ARG_CRO_225412.npy", index_player=20)
+
+#anim = visualize_2D_npy("data/new_skel_2d/ARG_CRO_225412.npy", index_player=20)
+anim = visualize_3D_npy("data/new_skel_3d/ARG_CRO_225412.npy", index_player=20)
+
